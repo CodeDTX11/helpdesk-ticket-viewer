@@ -24,6 +24,11 @@ public class TicketService {
 
         return ticketRepository.findByStatusIgnoreCase(status);
 
+//            return tickets.stream()
+//                    .filter(t -> t.getStatus() == status)
+//                    .collect(Collectors.toList());
+//        }
+
         //        List<Ticket> result = new ArrayList<>();
 //        for(Ticket ticket : tickets) {
 //            if(ticket.getStatus().equalsIgnoreCase(status)) {
@@ -34,12 +39,11 @@ public class TicketService {
     }
 
     public Ticket getTicketById(Long id) {
-        return ticketRepository.findById(id)
-                .orElse(new Ticket());
-
 //        return ticketRepository.findById(id)
-//                .orElseThrow((() ->  new ResourceNotFoundException("Ticket not found for ID: " + id));
-//    }
+//                .orElse(new Ticket());
+
+        return ticketRepository.findById(id)
+                .orElseThrow(() ->  new ResourceNotFoundException("Ticket not found for ID: " + id));
     }
 
     public Map<String, Long> getSummary() {
