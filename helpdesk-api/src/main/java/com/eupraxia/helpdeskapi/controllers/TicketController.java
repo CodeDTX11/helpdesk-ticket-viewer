@@ -1,11 +1,10 @@
-package com.eupraxia.helpdesk_api.controllers;
+package com.eupraxia.helpdeskapi.controllers;
 
-import com.eupraxia.helpdesk_api.model.Ticket;
-import com.eupraxia.helpdesk_api.services.TicketService;
+import com.eupraxia.helpdeskapi.model.Ticket;
+import com.eupraxia.helpdeskapi.services.TicketService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")

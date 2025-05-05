@@ -1,4 +1,4 @@
-package com.eupraxia.helpdesk_api;
+package com.eupraxia.helpdeskapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,6 @@
-package com.eupraxia.helpdesk_api.controllers.advice;
+package com.eupraxia.helpdeskapi.controllers.advice;
 
-import com.eupraxia.helpdesk_api.exceptions.ResourceNotFoundException;
+import com.eupraxia.helpdeskapi.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
