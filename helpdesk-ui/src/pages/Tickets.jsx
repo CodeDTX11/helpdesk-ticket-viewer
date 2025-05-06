@@ -21,6 +21,7 @@ export default function Tickets() {
         try {
             if(status === "None"){
                 setTickets([])
+                setSelectedTicket(null)
             } else {
             const data = await getTickets(status);
             setTickets(data);
@@ -43,7 +44,7 @@ export default function Tickets() {
             setSelectedTicket(ticket);
         } catch (err) {
             console.error(err);
-            setTicketError('Failed to load ticket.', err);
+            setTicketError('Failed to load ticket.');
             setSelectedTicket(null);
         } finally {
             setTicketLoading(false);

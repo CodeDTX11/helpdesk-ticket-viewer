@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom';
 
+import logo from '../assets/eupraxia-logo.png';
+
+
 export default function Navbar() {
   return (
     <nav className="navbar navbar-dark bg-dark px-4">
-      <span className="navbar-brand text-white">Help Desk</span>
+      <img src={logo} alt="Icon" style={{ width: '15vw', height: 'auto' }}/>
       <div className="d-flex gap-3">
         <NavLink to="/"
           className={({ isActive }) =>

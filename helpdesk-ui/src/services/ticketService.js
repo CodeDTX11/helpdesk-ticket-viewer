@@ -2,14 +2,18 @@ import axios from 'axios';
 
 const BASE_URL = 'http://localhost:8080/api';
 
-export async function getTickets(status = 'All') {
+export async function getTickets(ticketStatus = 'All') {
+  const config = {};
 
-  const config = status === 'All'
-    ? {} // no query params
-    : { params: { status } }; // adds ?status=...
+  if (ticketStatus !== 'All') {
+    config.params = {
+      "status" : ticketStatus
+    };
+  }
 
   try {
     const response = await axios.get(`${BASE_URL}/tickets`, config);
+    console.log(response.data)
     return response.data;
   } catch (error) {
     console.error('Error fetching tickets:', error);
@@ -17,31 +21,21 @@ export async function getTickets(status = 'All') {
   }
 }
 
-// export async function getTicketsByStatus(status) {
-//   try {
-//   const res = await axios.get(`${BASE_URL}/tickets?status=${status}`);
-//   return res.data;
-//   } catch (err) {
-//     console.error("Failed to fetch tickets:", err);
-//     throw err; // re-throw so the caller knows it failed
-//   }
-// }
-
-
 export async function getSummary() {
   try {
     const response = await axios.get(`${BASE_URL}/summary`);
+    console.log(response.data)
     return response.data;
   } catch (err) {
     console.error("Failed to fetch summary:", err);
-    throw err; // re-throw so the caller knows it failed
+    throw err;
   }
 }
 
 export async function getTicketById(id) {
   try {
     const response = await axios.get(`${BASE_URL}/tickets/${id}`);
-    return response.data; // this is the actual ticket object
+    return response.data;
   } catch (error) {
     console.error(`Error fetching ticket ${id}:`, error);
     throw error;

@@ -19,7 +19,7 @@ public class HelpdeskApiApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/api/**")
-						.allowedOrigins("http://localhost:5173") // Vite default port
+						.allowedOrigins("http://localhost:3000")
 						.allowedMethods("*");
 			}
 		};

@@ -5,7 +5,6 @@ export default function TicketSelector({ selectedStatus, onChange, onSubmit }) {
         <label htmlFor="status">Filter by Status: </label>
         <select
           id="status"
-          value={selectedStatus}
           onChange={(e) => onChange(e.target.value)}
           className="form-select"
         >
