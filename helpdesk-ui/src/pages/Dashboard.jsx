@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-// import { getSummary } from '../service/ticketService';
-import { getSummary } from '../services/mockTicketService';  // ← mock data
+import { getSummary } from '../services/ticketService';
+// import { getSummary } from '../services/mockTicketService';  
 
 export default function Dashboard() {
   const [summary, setSummary] = useState({});
