@@ -1,4 +1,4 @@
-FROM node:20
+FROM docker.io/library/node:20
 WORKDIR /app
 
 # Copy files and install dependencies
@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Expose Vite dev server port
-EXPOSE 5173
+EXPOSE 3000
 
 # Run the dev server when the container starts
 CMD ["npm", "run", "dev"]

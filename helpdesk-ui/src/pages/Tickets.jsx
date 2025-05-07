@@ -54,7 +54,7 @@ export default function Tickets() {
     return (
         <div className="container d-flex">
         <div id="left" className="container mt-5 d-flex flex-column gap-2 mx-5">
-            <TicketSelector selectedStaus={status} onChange={setStatus} onSubmit={fetchTickets} />
+            <TicketSelector onChange={setStatus} onSubmit={fetchTickets} />
             {listLoading && <p>Loading tickets...</p>}
             {listError && <p className="text-danger">{listError}</p>}
             <TicketList tickets={tickets} onTicketClick={handleTicketClick} />

@@ -1,5 +1,5 @@
 
-export default function TicketSelector({ selectedStatus, onChange, onSubmit }) {
+export default function TicketSelector({ onChange, onSubmit }) {
     return (
       <>
         <label htmlFor="status">Filter by Status: </label>
