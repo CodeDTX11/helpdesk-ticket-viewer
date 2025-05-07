@@ -23,24 +23,9 @@ public class TicketService {
     public List<Ticket> getTicketsByStatus(String status) {
 
         return ticketRepository.findByStatusIgnoreCase(status);
-
-//            return tickets.stream()
-//                    .filter(t -> t.getStatus() == status)
-//                    .collect(Collectors.toList());
-//        }
-
-        //        List<Ticket> result = new ArrayList<>();
-//        for(Ticket ticket : tickets) {
-//            if(ticket.getStatus().equalsIgnoreCase(status)) {
-//                result.add(ticket);
-//            }
-//        }
-//        return result;
     }
 
     public Ticket getTicketById(Long id) {
-//        return ticketRepository.findById(id)
-//                .orElse(new Ticket());
 
         return ticketRepository.findById(id)
                 .orElseThrow(() ->  new ResourceNotFoundException("Ticket not found for ID: " + id));
@@ -62,19 +47,15 @@ public class TicketService {
 
         }
         return summary;
+    }
 
-        //very declarative approach, need to study
-//        return tickets.stream()
-//                .collect(Collectors.groupingBy(
-//                        t -> t.getStatus().toLowerCase(), // normalize for consistent keys
-//                        Collectors.counting()
-//                ));
+    public Ticket createTicket(Ticket newTicket) {
 
-//        return ticketRepo.findAll().stream()
-//                .collect(Collectors.groupingBy(
-//                        Ticket::getStatus,
-//                        Collectors.counting()
-//                ));
-//    }
+        if(newTicket == null || newTicket.getTitle() == null || newTicket.getDescription() == null){
+            throw new IllegalArgumentException("Invalid ticket data");
+        }
+        newTicket.setStatus("Open");
+
+        return ticketRepository.save(newTicket);
     }
 }

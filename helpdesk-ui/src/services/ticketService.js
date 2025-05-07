@@ -41,3 +41,13 @@ export async function getTicketById(id) {
     throw error;
   }
 }
+
+export async function createTicket(ticketToCreate){
+  try {
+    const response = await axios.post(`${BASE_URL}/tickets`, ticketToCreate);
+    return response.data;
+  } catch (error) {
+    console.error('Error creating ticket:', error);
+    throw error;
+  }
+}

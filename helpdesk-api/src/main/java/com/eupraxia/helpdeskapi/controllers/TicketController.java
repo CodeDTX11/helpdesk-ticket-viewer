@@ -34,4 +34,9 @@ public class TicketController {
     public Map<String, Long> getSummary() {
         return ticketService.getSummary();
     }
+
+    @PostMapping("/tickets")
+    public Ticket createTicket(@RequestBody Ticket newTicket){
+        return ticketService.createTicket(newTicket);
+    }
 }
