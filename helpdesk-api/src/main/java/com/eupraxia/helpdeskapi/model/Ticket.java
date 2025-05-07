@@ -33,7 +33,7 @@ public class Ticket {
     public Ticket(String title, String description, String status) {
         this.title = title;
         this.description = description;
-        this.status = status.toUpperCase();
+        this.status = status.toLowerCase();
     }
 
     // Getters and setters

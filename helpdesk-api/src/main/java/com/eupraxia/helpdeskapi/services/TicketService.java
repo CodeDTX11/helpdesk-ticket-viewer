@@ -40,7 +40,11 @@ public class TicketService {
         summary.put("closed", 0L);
 
         List<Ticket> tickets = ticketRepository.findAll();
-
+//        for (Ticket ticket : tickets) {
+//            System.out.println(ticket.getTitle());
+//            System.out.println(ticket.getDescription());
+//            System.out.println(ticket.getStatus());
+//        }
         for (Ticket ticket : tickets) {
             String status = ticket.getStatus();
             summary.put(status, summary.get(status) + 1);
